@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>news gh </title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,
+            height=device-height,
+            initial-scale=1.0,
+            maximum-scale=1.0,
+            viewport-fit=cover">
+ <link rel="shortcut icon" type="image/ico" href="images/news.ico">
+ <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body translate="no">
+ <div id='debug'></div>
+ <div align='right' id='info' class='unselectable'> &nbsp;&nbsp;&nbsp;&nbsp; </div>
+ <div class='container unselectable'>
+   <ul id='tabs'>
+     <li><a class='' id='tab0' onmouseover='page(0);'>National</a></li>
+     <li><a class='' id='tab1' onmouseover='page(1);'>Local</a></li>
+     <li><a class='' id='tab2' onmouseover='page(2);'>Weather &amp; Misc.</a></li>
+   </ul>
+   <div class='page' id='page'></div>
+   <div id='error'></div>
+   <div align='left' id='bg-caption'></div>
+   <div align='right' class='icons'>
+     <span id='bg-switch' title='switch'
+           onclick='$.change_background();'>&#10227;</span>
+     &nbsp;
+     <span id='bg-style-switch' title='switch style'
+           onclick='$.change_background_style();'></span>
+   </div>
+  </div>
+  <script src="js/news.min.js"></script>
+ <script>
+
+    //////////////////////
+    //       data       //
+    //////////////////////
+
+    $.links =
+       `
+        [PAGE0a]
+          ; COmment
+          #Comment
+          www.nbcnews.com | NBC News
+          www.cbsnews.com | CBS News
+          abcnews.go.com  | ABC News
+          news.google.com | Google News
+          -
+          www.cnn.com            | CNN
+          www.washingtonpost.com | Washington Post
+          www.nytimes.com        | New York Times
+          
+          www.huffingtonpost.com | Huffington Post
+          -
+          www.usatoday.com       | USA Today
+        [PAGE0b]
+          www.bbc.com/news          | BBC
+          www.voanews.com           | VOA
+          -
+          apnews.com/apf-topnews    | AP
+          www.upi.com/Top_News      | UPI
+          reuters.com               | Reuters
+          -
+          theatlantic.com           | The Atlantic
+          thehill.com               | The Hill
+          www.vox.com               | Vox
+          www.theguardian.com/us    | The Guardian
+          www.time.com              | Time Magazine
+        [PAGE1a]
+          -
+          www.ocregister.com           | OC Register
+          mercurynews.com              | Mercury News
+          -
+          www.latimes.com              | Los Angeles Times
+          -
+ 
+          - - - - - - - - -
+        [PAGE1b]
+          - - - - - - - - -
+        [PAGE2a]
+          -
+          www.accuweather.com                              | AccuWeather
+          www.wunderground.com                             | UWeather
+          weather.com/weather/hourbyhour/                  | Weather.com
+          www.weatherbug.com/                              | Weather Bug
+          -
+          map.purpleair.com/                               | Purple Air
+          www.airnow.gov/                                  | Air Now
+          -
+          -
+          www.cnrfc.noaa.gov/precipMaps.php?group=sf&hour=24&synoptic=0              | Precipitation
+          ggweather.com/seasonal_rain.htm                                            | Rainfall
+          - - - - -
+        [PAGE2b]
+          -
+          finance.yahoo.com/quotes/%5EDJI,%5EIXIC           | Yahoo! Finance
+          fivethirtyeight.com                               | Five Thirty-Eight
+          -
+          stardate.org/radio/calendars                      | Star Date
+          space.com                                         | Space
+          - - - - -
+          www.tvtv.us/                                      | TV Schedule
+       `
+    //
+    // background colors or images
+    //
+
+    const backgrounds = [
+       `
+           AliceBlue
+           AntiqueWhite
+           Aquamarine
+           Beige
+           CadetBlue
+           CornSilk
+           DarkSeaGreen
+           DeepSkyBlue
+           HoneyDew
+           Lavender
+           LightBlue
+           Linen
+           Moccasin
+           OldLace
+           MintCream
+           MistyRose
+           PaleturQuoise
+           SeaShell
+           Silver
+           Snow
+       `,
+       `
+           #F9FDFE | images/news.gif
+           #6BDDF1 | images/bike1.gif
+           #CDEFFA | images/bird1.gif
+           #E6FFE6 | images/deer.gif
+           #F9FDFE | images/news.gif
+           #D8F7FC | images/bird2.gif
+           #F9FDFE | images/cat.gif
+           #E4F0F5 | images/bike2.gif
+           #F9FDFE | images/news.gif
+           #E6CAA8 | images/dog.gif
+           #97C1F4 | images/tumbler.gif
+           #91E7FF | images/fish.gif
+           #C0D6F9 | images/stars.gif
+       `
+       ]
+
+    ///////////////////////
+    $.init()
+    ///////////////////////
+
+  </script>
+  </body>
+</html>
