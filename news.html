@@ -12,32 +12,31 @@
  <link rel="stylesheet" href="css/news.min.css">
 </head>
 <body translate="no">
+ <div id='debug'></div>
  <div align='right' id='info'> &nbsp;&nbsp;&nbsp;&nbsp; </div>
  <div class='container'>
    <ul id='tabs'>
-     <li><a class='' id='tab0' onmouseover='page(0);'>National</a></li>
-     <li><a class='' id='tab1' onmouseover='page(1);'>Local</a></li>
-     <li><a class='' id='tab2' onmouseover='page(2);'>Weather &amp; Misc.</a></li>
+     <li><a class='' id='tab0'>National</a></li>
+     <li><a class='' id='tab1'>Local &amp; Việt</a></li>
+     <li><a class='' id='tab2'>Weather &amp; Misc.</a></li>
    </ul>
    <div class='page' id='page'></div>
    <div id='error'></div>
    <div align='left' id='bg-caption'></div>
    <div align='right' class='icons'>
-     <span id='bg-switch' title='switch'
-           onclick='$.change_background();'>&#10227;</span>
+     <span id='bg-switch' title='switch'>&#10227;</span>
      &nbsp;
-     <span id='bg-style-switch' title='switch style'
-           onclick='$.change_background_style();'></span>
+     <span id='bg-style-switch' title='switch style'></span>
    </div>
   </div>
   <script src="js/news.min.js"></script>
- <script>
+  <script>
 
     //////////////////////
     //       data       //
     //////////////////////
 
-    $.links =
+    const links =
        `
         [PAGE0a]
           ; COmment
@@ -147,9 +146,8 @@
        ]
 
     ///////////////////////
-    $.init()
+    const page = new Page({links: links, backgrounds: backgrounds})
     ///////////////////////
-
-  </script>
+    </script>
   </body>
 </html>
